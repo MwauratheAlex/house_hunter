@@ -29,18 +29,16 @@
 .underline:before{
     content: "";
     position: absolute;
-    width: 30%;
+    width: 20%;
     height: 2px;
     bottom: 2px;
     background-color: rgba(255, 0, 0, 0.591);
-    left: 50%; /* Centered under the text */
-    transform: translateX(-50%); /*Center horizontally*/
     transition: width 0.3s; /* Add a transition for smooth effect */
 }
 
 .underline:hover:before{
     background-color: rgba(255, 0, 0, 0.832);
-    width: 80%;
+    width: 60%;
 }
 
 .border {

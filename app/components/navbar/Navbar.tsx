@@ -1,11 +1,10 @@
-import navbar from "../../styles/navbar.module.css";
+import styles from "../../styles/navbar.module.css";
 import Link from "./Link";
 import logo from "./images/logo.png";
 import Image from "next/image";
 
 export default async function Navbar() {
-  // CSS Classes
-  const { nav, authBtns, underline, signUp, border } = navbar;
+  const { nav, authBtns, underline, signUp, border } = styles;
 
   return (
     <nav className={nav}>

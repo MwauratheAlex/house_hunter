@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "./components/navbar/Navbar";
 
 import { Nunito } from "next/font/google";
+import Search from "./components/search/Search";
 
 export const metadata: Metadata = {
   title: "House Hunter",
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: props) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <Navbar />
+        <header>
+          <Navbar />
+          <Search />
+        </header>
         {children}
       </body>
     </html>

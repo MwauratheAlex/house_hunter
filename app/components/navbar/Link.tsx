@@ -3,7 +3,7 @@ interface props {
   variant?: string;
 }
 
-export default function Link({ text, variant = "" }: props) {
+export default async function Link({ text, variant = "" }: props) {
   return (
     <li className={variant}>
       <a href="#">{text}</a>
