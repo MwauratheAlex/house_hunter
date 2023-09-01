@@ -11,6 +11,14 @@ export default function Home() {
       <ListingCard />
       <ListingCard />
       <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
+      <ListingCard />
     </main>
   );
 }
