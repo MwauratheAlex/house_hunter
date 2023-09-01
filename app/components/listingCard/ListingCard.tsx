@@ -10,7 +10,11 @@ export default function ListingCard() {
     <div className={card}>
       <div className={img}>
         <div className={like}>
-          <AiOutlineHeart className={icon} size="2em" />
+          <AiOutlineHeart
+            className={icon}
+            size="2em"
+            // style={{ backgroundColor: "#000" }}
+          />
           <AiFillHeart className={fill} size="1.8em" />
         </div>
         <Image src={house} alt="" />
