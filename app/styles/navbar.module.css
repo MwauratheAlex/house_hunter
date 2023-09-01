@@ -1,4 +1,13 @@
 .nav {
     border-bottom: 1px solid #CACACA;
     padding: 22px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    text-transform: uppercase;
+
 }

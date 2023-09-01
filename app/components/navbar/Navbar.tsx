@@ -1,16 +1,26 @@
 import navbar from "../../styles/navbar.module.css";
-import Button from "./Button";
+import Link from "./Link";
 import logo from "./images/logo.png";
 import Image from "next/image";
 
 export default async function Navbar() {
-  const { nav } = navbar;
+  // CSS Classes
+  const { nav, buttons } = navbar;
+
   return (
     <nav className={nav}>
       <Image src={logo} alt="House Hunter logo" />
-      <Button text="List your property" />
-      <Button text="Login" />
-      <Button text="Sign up" />
+      <ul>
+        <li>
+          <Link text="List your property" />
+        </li>
+        <li>
+          <Link text="Login" />
+        </li>
+        <li>
+          <Link text="Sign up" />
+        </li>
+      </ul>
     </nav>
   );
 }
