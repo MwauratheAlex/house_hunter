@@ -12,6 +12,6 @@ main {
     margin: 0 80px;
     display: grid;
     grid-template-columns: repeat(5, auto);
-    gap: 28px;
+    gap: 56px 28px;
     align-content: start;
 }
