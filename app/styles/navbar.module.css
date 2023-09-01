@@ -9,5 +9,41 @@
 .nav ul {
     display: flex;
     text-transform: uppercase;
+    gap: 67px;
+}
 
+.nav ul li {
+    padding: 6px 23px;
+}
+
+.authBtns {
+    display: flex;
+    gap:20px;
+}
+
+.underline {
+    position: relative;
+    font-weight: bold;
+}
+
+.underline:before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    bottom: 2px;
+    background-color: rgba(255, 0, 0, 0.591);
+    left: 50%; /* Centered under the text */
+    transform: translateX(-50%); /*Center horizontally*/
+    transition: width 0.3s; /* Add a transition for smooth effect */
+}
+
+.underline:hover:before{
+    background-color: rgba(255, 0, 0, 0.832);
+    width: 80%;
+}
+
+.border {
+    border: 1px solid #000AFF;
+    border-radius: 7px;
 }

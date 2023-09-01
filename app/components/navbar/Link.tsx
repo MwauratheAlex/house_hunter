@@ -1,7 +1,12 @@
 interface props {
   text: string;
+  variant?: string;
 }
 
-export default function Link({ text }: props) {
-  return <a href="#">{text}</a>;
+export default function Link({ text, variant = "" }: props) {
+  return (
+    <li className={variant}>
+      <a href="#">{text}</a>
+    </li>
+  );
 }

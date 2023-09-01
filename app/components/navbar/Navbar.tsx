@@ -5,21 +5,17 @@ import Image from "next/image";
 
 export default async function Navbar() {
   // CSS Classes
-  const { nav, buttons } = navbar;
+  const { nav, authBtns, underline, signUp, border } = navbar;
 
   return (
     <nav className={nav}>
       <Image src={logo} alt="House Hunter logo" />
       <ul>
-        <li>
-          <Link text="List your property" />
-        </li>
-        <li>
+        <Link text="List your property" variant={underline} />
+        <div className={authBtns}>
           <Link text="Login" />
-        </li>
-        <li>
-          <Link text="Sign up" />
-        </li>
+          <Link text="Sign up" variant={border} />
+        </div>
       </ul>
     </nav>
   );
