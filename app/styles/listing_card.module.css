@@ -36,26 +36,8 @@
 
 .like {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 0;
+    right: 0;
     margin-top: .8em;
     margin-right: .8em;
-}
-
-.icon, .like {
-    top: 0em;
-    right: 0em;
-}
-
-
-.icon {
-    position: absolute;
-    fill: white;
-    font-weight: bold;
-    z-index: 10;
-    /* background-color: blue; */
-}
-
-.fill {
-    color: rgba(0, 0, 0, 0.383);
 }

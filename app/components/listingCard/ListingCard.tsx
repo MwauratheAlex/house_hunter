@@ -3,20 +3,14 @@ import Image from "next/image";
 import house from "./images/house_1.jpg";
 import starIcon from "./images/🦆 icon _star_.svg";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import HeartButton from "../HeartButton";
 
 export default function ListingCard() {
   const { card, img, content, bold, light, fl, like, icon, fill } = style;
   return (
     <div className={card}>
       <div className={img}>
-        <div className={like}>
-          <AiOutlineHeart
-            className={icon}
-            size="2em"
-            // style={{ backgroundColor: "#000" }}
-          />
-          <AiFillHeart className={fill} size="1.8em" />
-        </div>
+        <HeartButton />
         <Image src={house} alt="" />
       </div>
       <div className={content}>
