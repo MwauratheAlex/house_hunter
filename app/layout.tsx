@@ -22,10 +22,10 @@ export default function RootLayout({ children }: props) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <header>
+        {/* <header>
           <Navbar />
           <Search />
-        </header>
+        </header> */}
         {children}
       </body>
     </html>

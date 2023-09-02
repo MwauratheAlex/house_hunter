@@ -9,9 +9,46 @@ body {
 
 main {
     height: 100%;
-    margin: 0 80px;
+    /* margin: 0 80px; */
+    margin: 0 1em;
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    /* grid-template-columns: repeat(5, auto); */
+    grid-template-columns: repeat(1, auto);
     gap: 56px 28px;
     align-content: start;
+}
+
+@media (min-width: 640px) {
+    main {
+        grid-template-columns: repeat(2, auto);
+        margin: 0 2em;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(3, auto);
+        margin: 0 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(4, auto);
+        margin: 0 4em;
+    }
+}
+
+@media (min-width: 1280px) {
+    main {
+        grid-template-columns: repeat(5, auto);
+        margin: 0 5em;
+    }
+}
+
+@media (min-width: 1900px) {
+    main {
+        grid-template-columns: repeat(6, auto);
+        margin: 0 5em;
+    }
 }
