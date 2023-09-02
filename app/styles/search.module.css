@@ -1,12 +1,10 @@
 .searchBar {
-    /* margin: 0 80px; */
     margin: 0 16px;
     padding: 27px 0;
 }
 
 .searchBar form {
     display: grid;
-    /* grid-template-columns: repeat(4, 2.5fr) 2fr; */
     grid-template-columns: repeat(1, auto);
     gap: 16px;
 }
