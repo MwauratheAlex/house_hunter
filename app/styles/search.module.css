@@ -1,20 +1,22 @@
 .searchBar {
-    margin: 0 80px;
+    /* margin: 0 80px; */
+    margin: 0 16px;
     padding: 27px 0;
 }
 
 .searchBar form {
     display: grid;
-    grid-template-columns: repeat(4, 2.5fr) 2fr;
-    gap: 24px;
+    /* grid-template-columns: repeat(4, 2.5fr) 2fr; */
+    grid-template-columns: repeat(1, auto);
+    gap: 16px;
 }
 
 .searchBar form .inputContainer, .searchBar form .btn {
     background: white;
     display: flex;
-    box-shadow: 0 3px 10px rgba(65, 65, 65, 0.2);
-    padding: 5px 30px;
-    border-radius: 40px;
+    box-shadow: 0 3px 10px rgba(65, 65, 65, 0.1);
+    padding: 0px 30px;
+    border-radius: 10px;
     text-transform: uppercase;
 }
 
@@ -24,15 +26,17 @@
 
 .inputContainer div {
     margin-left: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
 .inputContainer div label {
-    font-size: 14px;
+    font-size: .6rem;
     color: #636262;
 }
 
 .inputContainer div input {
-    font-size: 18px;
+    font-size: .9rem;
     color: #434242;
     font-weight: bold;
 }
@@ -43,16 +47,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: 0;
-
+    grid-column: 1 / -1;
     
 }
 
 .searchBar form .btn button {
     color: #1F1F1F;
-    font-size: 22px;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 13px;
@@ -60,4 +64,73 @@
 
 .searchBar form .btn:hover {
     cursor: pointer;
+}
+
+@media (min-width: 640px) {
+    .searchBar {
+        margin: 0 32px;
+    }
+
+    .searchBar form {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (min-width: 768px) {
+    .searchBar {
+        margin: 0 48px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .searchBar {
+        margin: 0 64px;
+    }
+
+    .searchBar form {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .searchBar form .btn {
+        grid-column: 2 / -1;
+    }
+}
+
+@media (min-width: 1280px) {
+    .searchBar {
+        margin: 0 80px;
+    }
+
+    .searchBar form {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .searchBar form .btn {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1440px) {
+    .searchBar {
+        margin: 0 80px;
+    }
+
+    .searchBar form {
+        grid-template-columns: repeat(5, auto);
+    }
+
+    .searchBar form .btn {
+        grid-column: auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .inputContainer div label {
+        font-size: .8rem;
+    }
+    
+    .inputContainer div input {
+        font-size: 1rem;
+    }
 }

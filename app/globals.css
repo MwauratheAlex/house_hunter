@@ -31,7 +31,7 @@ main {
 
 @media (min-width: 1024px) {
     main {
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(1, auto);
         margin: 0 4em;
     }
 }
