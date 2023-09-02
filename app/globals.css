@@ -3,16 +3,13 @@
 @tailwind utilities;
 
 body {
-    /* border: 1px solid red; */
     height: auto;
 }
 
 main {
     height: 100%;
-    /* margin: 0 80px; */
     margin: 0 1em;
     display: grid;
-    /* grid-template-columns: repeat(5, auto); */
     grid-template-columns: repeat(1, auto);
     gap: 56px 28px;
     align-content: start;
@@ -46,7 +43,7 @@ main {
     }
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1536px) {
     main {
         grid-template-columns: repeat(6, auto);
         margin: 0 5em;
