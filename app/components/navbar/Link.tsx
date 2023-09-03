@@ -1,12 +1,13 @@
 interface props {
   text: string;
   variant?: string;
+  onClick?: () => void;
 }
 
-export default async function Link({ text, variant = "" }: props) {
+export default function Link({ text, variant = "", onClick }: props) {
   return (
-    <li className={variant}>
-      <a href="#">{text}</a>
+    <li className={variant} onClick={onClick}>
+      {text}
     </li>
   );
 }

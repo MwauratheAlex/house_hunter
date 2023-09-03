@@ -4,6 +4,8 @@ import Navbar from "./components/navbar/Navbar";
 
 import { Nunito } from "next/font/google";
 import Search from "./components/search/Search";
+import RegisterModal from "./components/modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata: Metadata = {
   title: "House Hunter",
@@ -25,6 +27,8 @@ export default function RootLayout({ children }: props) {
         <header>
           <Navbar />
           <Search />
+          <RegisterModal />
+          <ToasterProvider />
         </header>
         {children}
       </body>
