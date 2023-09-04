@@ -20,6 +20,7 @@
 }
 
 .nav ul {
+    gap: 1em;
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
@@ -133,7 +134,7 @@
     }
 
     .nav ul {
-        gap: 4em;
+        /* gap: 4em; */
         font-size: 1rem;
     }
 
