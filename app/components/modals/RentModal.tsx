@@ -4,8 +4,8 @@ import useRentModal from "@/app/hooks/useRentModal ";
 import Modal from "./Modal";
 import { useMemo, useState } from "react";
 import Heading from "../Heading";
-// import { categories } from "../navbar/Categories";
-// import CategoryInput from "../inputs/CategoryInput";
+import { categories } from "../navbar/Categories";
+import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 // import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
@@ -126,10 +126,7 @@ const RentModal = () => {
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
-      <Heading
-        title="Which of these best describes your place?"
-        subtitle="Pick a category"
-      />
+      <Heading title="Pick a category." subtitle="Selling or Renting" />
       <div
         className="
           grid 
@@ -140,7 +137,7 @@ const RentModal = () => {
           overflow-y-auto
         "
       >
-        {/* {categories.map((item) => (
+        {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
               onClick={(category) => setCustomValue("category", category)}
@@ -149,7 +146,7 @@ const RentModal = () => {
               icon={item.icon}
             />
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
@@ -269,7 +266,7 @@ const RentModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={rentModal.isOpen}
-      title="List your property!"
+      title="List your property."
       actionLabel={actionLabel}
       onSubmit={handleSubmit(onSubmit)}
       secondaryActionLabel={secondaryActionLabel}
