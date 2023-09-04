@@ -27,13 +27,14 @@
 }
 
 .authBtns li {
-    padding: 0 .5em;
+    padding: 10px .5em;
     cursor: pointer;
 }
 
 .authBtns {
     display: flex;
     gap:.5em;
+
 }
 
 .underline {
@@ -49,7 +50,7 @@
     position: absolute;
     width: 20%;
     height: 2px;
-    bottom: 4px;
+    bottom: 6px;
     background-color: rgba(255, 0, 0, 0.591);
     transition: width 0.3s; /* Add a transition for smooth effect */
 }
