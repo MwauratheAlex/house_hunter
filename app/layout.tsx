@@ -6,6 +6,8 @@ import { Nunito } from "next/font/google";
 import Search from "./components/search/Search";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
+import LoginModal from "./components/modals/LoginModal";
+import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata: Metadata = {
   title: "House Hunter",
@@ -20,13 +22,16 @@ const font = Nunito({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: props) {
+export default async function RootLayout({ children }: props) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={font.className}>
         <header>
-          <Navbar />
+          <Navbar currentUser={currentUser} />
           <Search />
+          <LoginModal />
           <RegisterModal />
           <ToasterProvider />
         </header>

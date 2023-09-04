@@ -27,6 +27,7 @@
 
 .authBtns li {
     padding: 0 .5em;
+    cursor: pointer;
 }
 
 .authBtns {
@@ -37,6 +38,7 @@
 .underline {
     position: relative;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .underline:before{
