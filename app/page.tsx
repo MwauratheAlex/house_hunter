@@ -12,8 +12,8 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main>
-      {listings.map((listings) => (
-        <ListingCard />
+      {listings.map((listing) => (
+        <ListingCard data={listing} />
       ))}
     </main>
   );
