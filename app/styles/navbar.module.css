@@ -17,6 +17,7 @@
     width: 10em;
     height: auto;
     margin-bottom: 1em;
+    cursor: pointer;
 }
 
 .nav ul {
