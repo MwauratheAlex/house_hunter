@@ -5,18 +5,26 @@
     flex-direction: column;
     z-index: 10;
     position: absolute;
-    background: white;
-    right: -15px;
-    border-radius: 20px;
-    top:40px;
+    background: rgb(234, 234, 234);
+    right: -20px;
+    border-radius: 10px;
+    top:60px;
     cursor: pointer;
-    padding: 40px 10px;
-    gap: 0;
+    padding: 40px 0px;
+    box-shadow: 0 0 50px rgb(187, 183, 183);
+    justify-content: start;
+    align-items: start;
 }
 
 .menuContainer ul li {
-    padding: 0 60px;
+    padding: 20px 60px 20px 30px;
     margin: 0;
-    width: max-content;
+    min-width: max-content;
     gap: 0;
+    /* border: 1px solid red; */
+    font-weight: bold;
+    color: rgb(25, 25, 25);
+    text-overflow: clip;
+    width: 100%;
+    border-top: 1px solid rgb(222, 220, 220);
 }

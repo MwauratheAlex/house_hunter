@@ -38,7 +38,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, [currentUser, loginModal, rentModal]);
 
   //Styles
-  const { menuContainer } = styles;
+  const { menuContainer, menuLink } = styles;
 
   return (
     <div className="relative">
@@ -74,18 +74,28 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div className={menuContainer}>
           {currentUser ? (
             <ul>
-              <Link onClick={() => router.push("/")} text="Home" />
+              <Link
+                onClick={() => router.push("/")}
+                text="Home"
+                variant={menuLink}
+              />
               <Link
                 onClick={() => router.push("/favorites")}
+                variant={menuLink}
                 text="My Favourites"
               />
 
               <Link
                 onClick={() => router.push("/properties")}
+                variant={menuLink}
                 text="My Properties"
               />
 
-              <Link onClick={rentModal.onOpen} text="List your property" />
+              <Link
+                onClick={rentModal.onOpen}
+                text="List your property"
+                variant={menuLink}
+              />
               {/* <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" /> */}
               <hr />
               <Link onClick={signOut} text="Logout" />

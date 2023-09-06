@@ -21,7 +21,7 @@
 }
 
 .nav ul {
-    gap: 1em;
+    /* gap: 1em; */
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
@@ -44,6 +44,10 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+
+.marginRight {
+    margin-right: 3rem;
 }
 
 .underline:before{
@@ -92,7 +96,7 @@
     }
 
     .nav ul {
-        gap: 2em;
+        /* gap: 2em; */
         font-size: 1rem;
     }
 

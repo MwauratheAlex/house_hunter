@@ -28,7 +28,7 @@ export default function NavItems({ currentUser }: Props) {
     <ul>
       <Link
         text="List your property"
-        variant={underline}
+        variant={`${underline} mr-20`}
         onClick={currentUser ? rentModal.onOpen : loginModal.onOpen}
       />
       {!currentUser && authButtons}

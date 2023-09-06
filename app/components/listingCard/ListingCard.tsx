@@ -98,6 +98,7 @@ export default function ListingCard({
             small
             label={actionLabel}
             onClick={handleDelete}
+            red={Boolean(onAction)}
           />
         )}
       </div>
