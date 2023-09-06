@@ -2,12 +2,11 @@
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
-import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
-// import useRentModal from "@/app/hooks/useRentModal ";
+import useRentModal from "@/app/hooks/useRentModal ";
 import { useRouter } from "next/navigation";
 import Link from "./Link";
 
@@ -21,7 +20,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
-  //   const rentModal = useRentModal();
+  const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +34,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     }
 
     // open rent modal
-    // rentModal.onOpen();
+    rentModal.onOpen();
   }, [currentUser, loginModal]);
 
   //Styles
@@ -75,18 +74,18 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div className={menuContainer}>
           {currentUser ? (
             <ul>
+              <Link onClick={() => router.push("/")} text="Home" />
               <Link
                 onClick={() => router.push("/favorites")}
                 text="My Favourites"
               />
-              <Link
-                onClick={() => router.push("/reservations")}
-                text="My Reservations"
-              />
+
               <Link
                 onClick={() => router.push("/properties")}
                 text="My Properties"
               />
+
+              <Link onClick={rentModal.onOpen} text="List your property" />
               {/* <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" /> */}
               <hr />
               <Link onClick={signOut} text="Logout" />
