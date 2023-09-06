@@ -3,13 +3,19 @@ import styles from "../styles/listing_card.module.css";
 
 import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { SafeUser } from "../types";
+import useFavorite from "../hooks/useFavorite";
 
-export default function HeartButton() {
-  const [favorited, setFavorited] = useState(false);
+interface Props {
+  listingId: string;
+  currentUser?: SafeUser | null;
+}
 
-  function toggleFavorite() {
-    setFavorited((prev) => !prev);
-  }
+export default function HeartButton({ listingId, currentUser }: Props) {
+  const { hasFavorited, toggleFavorite } = useFavorite({
+    listingId,
+    currentUser,
+  });
 
   return (
     <div
@@ -33,7 +39,7 @@ export default function HeartButton() {
       />
       <AiFillHeart
         size={24}
-        className={favorited ? "fill-rose-500" : "fill-neutral-500/70"}
+        className={hasFavorited ? "fill-rose-500" : "fill-neutral-500/70"}
       />
     </div>
   );
