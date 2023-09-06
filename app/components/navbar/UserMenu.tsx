@@ -35,7 +35,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
     // open rent modal
     rentModal.onOpen();
-  }, [currentUser, loginModal]);
+  }, [currentUser, loginModal, rentModal]);
 
   //Styles
   const { menuContainer } = styles;
