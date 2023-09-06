@@ -6,20 +6,18 @@ import { useRouter } from "next/navigation";
 
 import starIcon from "./images/🦆 icon _star_.svg";
 import HeartButton from "../HeartButton";
-import { SafeListing } from "@/app/types";
+import { SafeListing, SafeUser } from "@/app/types";
 
 interface Props {
   data: SafeListing;
+  currentUser?: SafeUser | null;
 }
 
-export default function ListingCard({ data }: Props) {
+export default function ListingCard({ data, currentUser }: Props) {
   const { card, img, content, bold, light, fl } = style;
   const router = useRouter();
   return (
-    <div
-      className="col-span-1 cursor-pointer group"
-      onClick={() => router.push(`/listings/${data.id}`)}
-    >
+    <div className="col-span-1 cursor-pointer group">
       <div
         className="
             aspect-square 
@@ -29,9 +27,9 @@ export default function ListingCard({ data }: Props) {
             rounded-xl
           "
       >
-        <HeartButton />
         <Image
           fill
+          onClick={() => router.push(`/listings/${data.id}`)}
           className="
               object-cover 
               h-full 
@@ -42,8 +40,20 @@ export default function ListingCard({ data }: Props) {
           src={data.imageSrc}
           alt="Listing"
         />
+        <div
+          className="
+            absolute
+            top-0
+            right-0
+          "
+        >
+          <HeartButton listingId={data.id} currentUser={currentUser} />
+        </div>
       </div>
-      <div className={content}>
+      <div
+        className={content}
+        onClick={() => router.push(`/listings/${data.id}`)}
+      >
         <div className={fl}>
           <p className={bold}>{data.title}</p>
           <div className={fl}>

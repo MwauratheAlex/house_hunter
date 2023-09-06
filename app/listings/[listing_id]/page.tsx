@@ -34,7 +34,7 @@ export default async function ListingPage({ params }: { params: IParams }) {
             right-5
           "
         >
-          <HeartButton />
+          <HeartButton listingId="" />
         </div>
       </div>
       <h1>{listing?.title}</h1>
