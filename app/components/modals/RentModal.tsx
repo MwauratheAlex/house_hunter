@@ -15,6 +15,7 @@ import Input from "../inputs/Input";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import LocationSearch from "../LocationSearch";
 
 enum STEPS {
   CATEGORY = 0,
@@ -154,7 +155,7 @@ const RentModal = () => {
 
   if (step === STEPS.LOCATION) {
     bodyContent = (
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-2">
         <Heading
           title="Where is your place located?"
           subtitle="Help guests find you!"
@@ -163,6 +164,7 @@ const RentModal = () => {
           value={location}
           onChange={(value) => setCustomValue("location", value)}
         /> */}
+        {/* <LocationSearch /> */}
         <Map center={location?.latlng} />
       </div>
     );

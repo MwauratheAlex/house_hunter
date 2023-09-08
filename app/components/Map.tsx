@@ -33,17 +33,19 @@ const Map: React.FC<MapProps> = ({ center }) => {
   ];
 
   return (
-    <MapContainer
-      center={(center as L.LatLngExpression) || [0, 37]}
-      zoom={center ? 4 : 5}
-      scrollWheelZoom={false}
-      className="h-[35vh] rounded-lg"
-      maxBounds={bounds} // Add maxBounds prop here
-    >
-      <TileLayer url={url} attribution={attribution} />
-      {center && <Marker position={center as L.LatLngExpression} />}
-      <MapSearchField />
-    </MapContainer>
+    <>
+      <MapContainer
+        center={(center as L.LatLngExpression) || [0, 37]}
+        zoom={center ? 4 : 5}
+        scrollWheelZoom={false}
+        className="h-[35vh] rounded-lg"
+        maxBounds={bounds} // Add maxBounds prop here
+      >
+        <TileLayer url={url} attribution={attribution} />
+        {center && <Marker position={center as L.LatLngExpression} />}
+        <MapSearchField />
+      </MapContainer>
+    </>
   );
 };
 

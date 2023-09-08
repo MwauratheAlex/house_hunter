@@ -10,6 +10,10 @@ const SearchField = () => {
   // @ts-ignore
   const searchControl = new GeoSearchControl({
     provider: provider,
+    // position: "top",
+    // style: "bar",
+    // autoComplete: true, // optional: true|false  - default true
+    // autoCompleteDelay: 250, // optional: number      - default 250
   });
 
   const map = useMap();
