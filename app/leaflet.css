@@ -211,11 +211,13 @@
 .leaflet-control-geosearch form {
   display: block;
   /* padding: .2rem; */
-  border: 1px solid rgba(255, 0, 0, 0.14);
+  border: 1px solid rgba(71, 71, 71, 0.14);
   border-radius: 4px;
   left: 0;
   position: relative;
   margin-right: 10px;
+  height: fit-content;
+  height: fit-content;
 }
 
 .leaflet-control-geosearch form input {
@@ -232,4 +234,12 @@
   width: 100%;
   justify-content: space-between;
 }
+
+/* Add this CSS to your stylesheet */
+.leaflet-control-layers,
+.leaflet-bar {
+  border: none;
+  background-clip: padding-box;
+}
+
 
