@@ -88,7 +88,7 @@ export default function ListingCard({
               <p className={bold}>4.75</p>
             </div>
           </div>
-          <p className={light}>{data.roomCount} Bedroom</p>
+          <p className={light}>{data.guestCount} Bedroom</p>
           <p className={light}>Nairobi, Kenya</p>
           <p>
             <span className={bold}>Ksh. {data.price}</span> <span>monthly</span>
