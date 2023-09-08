@@ -235,11 +235,11 @@
   justify-content: space-between;
 }
 
-/* Add this CSS to your stylesheet */
+/* Use !important */
 .leaflet-control-layers,
 .leaflet-bar {
-  border: none;
-  background-clip: padding-box;
+  border: none !important;
+  background-clip: padding-box !important;
 }
 
 
