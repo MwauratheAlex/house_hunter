@@ -17,6 +17,7 @@ interface Props {
   onAction?: (id: any) => void;
   disabled?: boolean;
   actionLabel?: string;
+  contact?: boolean;
 }
 
 export default function ListingCard({
@@ -26,6 +27,7 @@ export default function ListingCard({
   actionLabel,
   disabled,
   actionId,
+  contact,
 }: Props) {
   const { card, img, content, bold, light, fl } = style;
   const router = useRouter();
@@ -77,20 +79,29 @@ export default function ListingCard({
           <HeartButton listingId={data.id} currentUser={currentUser} />
         </div>
       </div>
-      <div
-        className={content}
-        onClick={() => router.push(`/listings/${data.id}`)}
-      >
-        <div className={fl}>
-          <p className={bold}>{data.title}</p>
+      <div className={content}>
+        <div onClick={() => router.push(`/listings/${data.id}`)}>
           <div className={fl}>
-            <Image src={starIcon} alt="" />
-            <p className={bold}>4.75</p>
+            <p className={bold}>{data.title}</p>
+            <div className={fl}>
+              <Image src={starIcon} alt="" />
+              <p className={bold}>4.75</p>
+            </div>
           </div>
+          <p className={light}>{data.roomCount} Bedroom</p>
+          <p className={light}>Nairobi, Kenya</p>
+          <p>
+            <span className={bold}>Ksh. {data.price}</span> <span>monthly</span>
+          </p>
         </div>
-        <p className={light}>{data.roomCount} Bedroom</p>
-        <p className={light}>Nairobi, Kenya</p>
-        <p className={bold}>Ksh. {data.price} per month</p>
+
+        {contact && (
+          <Button
+            small
+            label="contact owner"
+            onClick={(e) => console.log("contact")}
+          />
+        )}
 
         {onAction && actionLabel && (
           <Button
