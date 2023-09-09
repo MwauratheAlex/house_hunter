@@ -39,7 +39,7 @@ const Map: React.FC<MapProps> = ({ center }) => {
         zoom={center ? 4 : 5}
         scrollWheelZoom={false}
         className="h-[50vh] rounded-lg"
-        maxBounds={bounds} // Add maxBounds prop here
+        // maxBounds={bounds} // Add maxBounds prop here
       >
         <TileLayer url={url} attribution={attribution} />
         {center && <Marker position={center as L.LatLngExpression} />}

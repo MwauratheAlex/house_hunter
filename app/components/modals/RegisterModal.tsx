@@ -12,11 +12,11 @@ import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
-// import useLoginModal from "@/app/hooks/useLoginModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
-  //   const loginModal = useLoginModal();
+  const loginModal = useLoginModal();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -40,7 +40,7 @@ const RegisterModal = () => {
       .then(() => {
         toast.success("Success!");
         registerModal.onClose();
-        // loginModal.onOpen();
+        loginModal.onOpen();
       })
       .catch((error) => {
         console.log(error);
@@ -53,7 +53,7 @@ const RegisterModal = () => {
 
   const toggle = useCallback(() => {
     registerModal.onClose();
-    // loginModal.onOpen();
+    loginModal.onOpen();
   }, [registerModal]);
 
   const bodyContent = (

@@ -2,12 +2,12 @@
 
 import useRentModal from "@/app/hooks/useRentModal ";
 import Modal from "./Modal";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Heading from "../Heading";
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-// import CountrySelect from "../inputs/CountrySelect";
+import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../inputs/Counter";
 import ImageUpload from "../inputs/ImageUpload";
@@ -16,6 +16,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import LocationSearch from "../LocationSearch";
+
+const leafletGeosearch = require("leaflet-geosearch");
+const { GeoSearchControl, OpenStreetMapProvider } = leafletGeosearch;
 
 enum STEPS {
   CATEGORY = 0,
@@ -68,6 +71,34 @@ const RentModal = () => {
       }),
     [location]
   );
+
+  //**************************** */
+  const [searchedLocation, setSearchedLocation] = useState("");
+
+  useEffect(() => {
+    // setup
+    const provider = new OpenStreetMapProvider();
+    const fetchData = async (value: any) => {
+      try {
+        // search
+        const results = await provider.search({ query: value });
+        const long = Math.floor(results[1].x);
+        const lat = Math.floor(results[1].y);
+        const loc = {
+          latlng: [lat, long],
+        };
+        console.log("Lat:", lat, "long", long); // Log the results here when they are available
+        setCustomValue("location", loc);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData(searchedLocation);
+  }, [searchedLocation]);
+  //  setCustomValue('location', value)}
+  //  <Map center={location?.latlng}/>
+  /******************************************* */
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -160,10 +191,10 @@ const RentModal = () => {
           title="Where is your place located?"
           subtitle="Help guests find you!"
         />
-        {/* <CountrySelect
-          value={location}
-          onChange={(value) => setCustomValue("location", value)}
-        /> */}
+        <CountrySelect
+          value={searchedLocation}
+          onChange={(value) => setSearchedLocation(value)}
+        />
         {/* <LocationSearch /> */}
         <Map center={location?.latlng} />
       </div>

@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Button from "../Button";
 import { useCallback } from "react";
-
+import ContactModal from "../modals/ContactModal";
 import starIcon from "./images/🦆 icon _star_.svg";
 import HeartButton from "../HeartButton";
 import { SafeListing, SafeUser } from "@/app/types";
+import useContactModal from "@/app/hooks/useContactModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 interface Props {
   data: SafeListing;
@@ -31,6 +33,7 @@ export default function ListingCard({
 }: Props) {
   const { card, img, content, bold, light, fl } = style;
   const router = useRouter();
+  const contactModal = useContactModal();
 
   const handleDelete = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -44,6 +47,11 @@ export default function ListingCard({
     },
     [disabled, onAction, actionId]
   );
+
+  const handleContact = () => {
+    console.log("contact");
+    contactModal.onOpen();
+  };
 
   return (
     <div className="col-span-1 cursor-pointer group">
@@ -96,11 +104,7 @@ export default function ListingCard({
         </div>
 
         {contact && (
-          <Button
-            small
-            label="contact owner"
-            onClick={(e) => console.log("contact")}
-          />
+          <Button small label="contact owner" onClick={handleContact} />
         )}
 
         {onAction && actionLabel && (
