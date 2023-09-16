@@ -172,24 +172,24 @@ const RentModal = () => {
     </div>
   );
 
-  // if (step === STEPS.LOCATION) {
-  //   bodyContent = (
-  //     <div className="flex flex-col gap-2">
-  //       <Heading
-  //         title="Where is your place located?"
-  //         subtitle="Help guests find you!"
-  //       />
-  //       <CountrySelect
-  //         value={searchedLocation}
-  //         onChange={(location: CountrySelectValue) => {
-  //           handleLocationSelect(location);
-  //         }}
-  //       />
-  //       {/* <LocationSearch /> */}
-  //       <Map center={location?.latlng} />
-  //     </div>
-  //   );
-  // }
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className="flex flex-col gap-2">
+        <Heading
+          title="Where is your place located?"
+          subtitle="Help guests find you!"
+        />
+        <CountrySelect
+          value={searchedLocation}
+          onChange={(location: CountrySelectValue) => {
+            handleLocationSelect(location);
+          }}
+        />
+        {/* <LocationSearch /> */}
+        <Map center={location?.latlng} />
+      </div>
+    );
+  }
 
   if (step === STEPS.INFO) {
     bodyContent = (

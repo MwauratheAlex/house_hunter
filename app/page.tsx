@@ -12,15 +12,17 @@ export default async function Home() {
   const currentUser = await getCurrentUser();
 
   return (
-    <main>
-      {listings.map((listing) => (
-        <ListingCard
-          data={listing}
-          key={listing.id}
-          currentUser={currentUser}
-          contact={true}
-        />
-      ))}
-    </main>
+    <ClientOnly>
+      <main>
+        {listings.map((listing) => (
+          <ListingCard
+            data={listing}
+            key={listing.id}
+            currentUser={currentUser}
+            contact={true}
+          />
+        ))}
+      </main>
+    </ClientOnly>
   );
 }
