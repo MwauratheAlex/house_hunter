@@ -11,7 +11,7 @@ export default function Navbar({ currentUser }: Props) {
   const { nav, logo, navElContainer } = styles;
 
   return (
-    <nav className={nav}>
+    <nav className={`${nav} select-none`}>
       <div className={navElContainer}>
         <Logo className={logo} />
         <NavItems currentUser={currentUser} />
