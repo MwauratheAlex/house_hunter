@@ -108,6 +108,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         <div className="flex flex-col items-start gap-3 bg-gray-50 fixed z-[10000] w-fit p-3 pr-10 rounded-md cursor-pointer ">
           {results.map((result) => (
             <p
+              key={result.label}
               className="text-neutral-500 ml-1 'text-lg'"
               onClick={() => {
                 onChange(result);
