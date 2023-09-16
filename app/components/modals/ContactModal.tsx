@@ -27,9 +27,8 @@ export default function ContactModal() {
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
+      phone: "",
+      message: "Hello, I'm intrested in your listing. Please reach out.",
     },
   });
 
@@ -56,8 +55,8 @@ export default function ContactModal() {
     <div className="flex flex-col gap-4">
       <Heading
         title="Contact the owner"
-        subtitle="Leave your phone number if you want the owner to reach out via phone
-                    otherwise check your email for responses"
+        subtitle="Leave your phone number if you want the owner to reach out via phone,
+                    else check your email for responses"
       />
       <Input
         id="phone"
@@ -83,13 +82,13 @@ export default function ContactModal() {
       <hr />
       <Button
         outline
-        label="Whatsapp the owner directly"
+        label="Whatsapp the owner"
         icon={FcGoogle}
         onClick={() => signIn("google")}
       />
       <Button
         outline
-        label="Call the owner directly"
+        label="Call the owner"
         icon={AiFillGithub}
         onClick={() => signIn("github")}
       />

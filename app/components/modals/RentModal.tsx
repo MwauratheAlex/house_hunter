@@ -7,7 +7,7 @@ import Heading from "../Heading";
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import CountrySelect from "../inputs/CountrySelect";
+import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../inputs/Counter";
 import ImageUpload from "../inputs/ImageUpload";
@@ -87,7 +87,7 @@ const RentModal = () => {
         const loc = {
           latlng: [lat, long],
         };
-        console.log("Lat:", lat, "long", long); // Log the results here when they are available
+        console.log("Lat:", lat, "long", long);
         setCustomValue("location", loc);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -193,7 +193,9 @@ const RentModal = () => {
         />
         <CountrySelect
           value={searchedLocation}
-          onChange={(value) => setSearchedLocation(value)}
+          onChange={(value: CountrySelectValue) =>
+            console.log("RentModal", value)
+          }
         />
         {/* <LocationSearch /> */}
         <Map center={location?.latlng} />
