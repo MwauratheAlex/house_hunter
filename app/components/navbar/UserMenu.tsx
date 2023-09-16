@@ -73,7 +73,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div className={menuContainer}>
           {currentUser ? (
-            <ul>
+            <ul className="select-none">
               <Link
                 onClick={() => router.push("/")}
                 text="Home"

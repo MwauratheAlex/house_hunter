@@ -11,6 +11,7 @@
 .navElContainer {
   width: 100%;
   margin: 0 1em;
+  user-select: none;
 }
 
 .logo {
@@ -26,16 +27,19 @@
   display: flex;
   text-transform: uppercase;
   justify-content: space-between;
+  user-select: none;
 }
 
 .authBtns li {
   padding: 10px 0.5em;
   cursor: pointer;
+  user-select: none;
 }
 
 .authBtns {
   display: flex;
   gap: 0.5em;
+  user-select: none;
 }
 
 .underline {

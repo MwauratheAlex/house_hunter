@@ -2,16 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 /* Disable text selection for all elements */
-* {
+#root {
   -webkit-user-select: none; /* Disable text selection for WebKit/Blink browsers */
   -moz-user-select: none; /* Disable text selection for Firefox */
   -ms-user-select: none; /* Disable text selection for IE/Edge */
   user-select: none; /* Disable text selection for standard browsers */
-}
-
-/* Customize the focus outline */
-*:focus {
-  outline: 2px solid gray; /* Change the color and width as needed */
 }
 
 body {
