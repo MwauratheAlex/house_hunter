@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import DebounceInput from "react-debounce-input";
 
 import Select from "react-select";
@@ -38,7 +38,8 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
   console.log(results);
 
   // Create a variable to store the timeout ID
-  let timeoutId: any;
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
+
   // Function to fetch results
   const fetchResults = async (query: string) => {
     const results = await provider.search({ query });
@@ -48,10 +49,12 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
   // search
   useEffect(() => {
     // Clear any previous timeouts
-    clearTimeout(timeoutId);
+    if (timeoutIdRef.current !== null) {
+      clearTimeout(timeoutIdRef.current);
+    }
 
     // Set a new timeout
-    timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       fetchResults(searchSting);
     }, 250);
   }, [searchSting]);
