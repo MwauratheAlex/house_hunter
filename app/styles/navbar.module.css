@@ -1,163 +1,162 @@
 .nav {
-    border-bottom: 1px solid #CACACA;
-    font-size: 0.8rem;
-    padding: 1em 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border-bottom: 1px solid #cacaca;
+  font-size: 0.8rem;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
 }
 
 .navElContainer {
-    width: 100%;
-    margin: 0 1em;
+  width: 100%;
+  margin: 0 1em;
 }
 
 .logo {
-    max-width: 100%;
-    width: 10em;
-    height: auto;
-    margin-bottom: 1em;
-    cursor: pointer;
+  max-width: 100%;
+  width: 10em;
+  height: auto;
+  margin-bottom: 1em;
+  cursor: pointer;
 }
 
 .nav ul {
-    /* gap: 1em; */
-    display: flex;
-    text-transform: uppercase;
-    justify-content: space-between;
+  /* gap: 1em; */
+  display: flex;
+  text-transform: uppercase;
+  justify-content: space-between;
 }
 
 .authBtns li {
-    padding: 10px .5em;
-    cursor: pointer;
+  padding: 10px 0.5em;
+  cursor: pointer;
 }
 
 .authBtns {
-    display: flex;
-    gap:.5em;
-
+  display: flex;
+  gap: 0.5em;
 }
 
 .underline {
-    position: relative;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  position: relative;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .marginRight {
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 
-.underline:before{
-    content: "";
-    position: absolute;
-    width: 20%;
-    height: 2px;
-    bottom: 6px;
-    background-color: rgba(255, 0, 0, 0.591);
-    transition: width 0.3s; /* Add a transition for smooth effect */
+.underline:before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  bottom: 6px;
+  background-color: rgba(255, 0, 0, 0.591);
+  transition: width 0.3s; /* Add a transition for smooth effect */
 }
 
-.underline:hover:before{
-    background-color: rgba(255, 0, 0, 0.832);
-    width: 60%;
+.underline:hover:before {
+  background-color: rgba(255, 0, 0, 0.832);
+  width: 60%;
 }
 
 .border {
-    border: 1px solid #000AFF;
-    border-radius: 7px;
+  border: 1px solid #000aff;
+  border-radius: 7px;
 }
 
 @media (min-width: 330px) {
+  .authBtns {
+    gap: 0.6em;
+  }
 
-    .authBtns {
-        gap:.6em;
-    }
+  .authBtns li {
+    padding-right: 0;
+  }
 
-    .authBtns li {
-        padding-right: 0;
-    }
-
-    .navElContainer {
-        margin: 0 16px;
-        display: flex;
-        flex-direction: column;
-    }
+  .navElContainer {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 640px) {
-    .navElContainer {
-        margin: 0 32px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .navElContainer {
+    margin: 0 32px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .nav ul {
-        /* gap: 2em; */
-        font-size: 1rem;
-    }
+  .nav ul {
+    /* gap: 2em; */
+    font-size: 1rem;
+  }
 
-    .authBtns {
-        gap:.4em;
-    }
+  .authBtns {
+    gap: 0.4em;
+  }
 
-    .authBtns li {
-        padding-right: 0;
-    }
+  .authBtns li {
+    padding-right: 0;
+  }
 
-    .navElContainer {
-        width: 100%;
-    }
+  .navElContainer {
+    width: 100%;
+  }
 
-    .logo {
-        max-width: 15em;
-        width: auto;
-        padding-top: 1em;
-    }
+  .logo {
+    max-width: 15em;
+    width: auto;
+    padding-top: 1em;
+  }
 }
 
 @media (min-width: 768px) {
-    .navElContainer {
-        margin: 0 48px;
-    }
+  .navElContainer {
+    margin: 0 48px;
+  }
 
-    .logo {
-        width: auto;
-        max-width: 100%;
-    }
+  .logo {
+    width: auto;
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
-    .navElContainer {
-        margin: 0 64px;
-    }
+  .navElContainer {
+    margin: 0 64px;
+  }
 }
 
 @media (min-width: 1280px) {
-    .navElContainer {
-        margin: 0 80px;
-    }
+  .navElContainer {
+    margin: 0 80px;
+  }
 
-    .nav ul {
-        /* gap: 4em; */
-        font-size: 1rem;
-    }
+  .nav ul {
+    /* gap: 4em; */
+    font-size: 1rem;
+  }
 
-    .authBtns {
-        gap: 1em;
-    }
+  .authBtns {
+    gap: 1em;
+  }
 }
 
 @media (min-width: 2000px) {
-    .logo {
-        width: 420px;
-        max-width: 200%;
-    }
+  .logo {
+    width: 420px;
+    max-width: 200%;
+  }
 
-    .nav ul {
-        font-size: 2rem;
-    }
+  .nav ul {
+    font-size: 2rem;
+  }
 }

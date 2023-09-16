@@ -7,6 +7,8 @@ interface ButtonProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   outline?: boolean;
+  whatsapp?: boolean;
+  call?: boolean;
   small?: boolean;
   icon?: IconType;
   red?: boolean;
@@ -20,6 +22,8 @@ const Button: React.FC<ButtonProps> = ({
   small,
   icon: Icon,
   red,
+  whatsapp,
+  call,
 }) => {
   return (
     <button
@@ -41,6 +45,8 @@ const Button: React.FC<ButtonProps> = ({
             ${small ? "font-light" : "font-semibold"}
             ${small ? "border-[1px]" : "border-2"}
             ${red && "border-[#ff2222]"}
+            ${whatsapp && "border-green-500"}
+            ${call && "border-orange-400"}
             `}
     >
       {Icon && (
