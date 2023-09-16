@@ -37,7 +37,7 @@ export async function POST(
       roomCount,
       bathroomCount,
       guestCount,
-      locationValue: "location.value", // For now pass string
+      locationValue: JSON.stringify(location),//"location.value", // For now pass string
       price: parseInt(price, 10),
       userId: currentUser.id
     }

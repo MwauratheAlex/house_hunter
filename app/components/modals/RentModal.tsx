@@ -73,29 +73,17 @@ const RentModal = () => {
   );
 
   //**************************** */
+  const handleLocationSelect = (location: CountrySelectValue) => {
+    // console.log("RentModal", location);
+    const loc = {
+      latlng: [location.y, location.x],
+      label: location.label,
+    };
+    setCustomValue("location", loc);
+  };
+
   const [searchedLocation, setSearchedLocation] = useState("");
 
-  useEffect(() => {
-    // setup
-    const provider = new OpenStreetMapProvider();
-    const fetchData = async (value: any) => {
-      try {
-        // search
-        const results = await provider.search({ query: value });
-        const long = Math.floor(results[1].x);
-        const lat = Math.floor(results[1].y);
-        const loc = {
-          latlng: [lat, long],
-        };
-        console.log("Lat:", lat, "long", long);
-        setCustomValue("location", loc);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData(searchedLocation);
-  }, [searchedLocation]);
   //  setCustomValue('location', value)}
   //  <Map center={location?.latlng}/>
   /******************************************* */
@@ -193,9 +181,9 @@ const RentModal = () => {
         />
         <CountrySelect
           value={searchedLocation}
-          onChange={(value: CountrySelectValue) =>
-            console.log("RentModal", value)
-          }
+          onChange={(location: CountrySelectValue) => {
+            handleLocationSelect(location);
+          }}
         />
         {/* <LocationSearch /> */}
         <Map center={location?.latlng} />

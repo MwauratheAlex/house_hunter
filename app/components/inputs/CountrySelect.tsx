@@ -72,7 +72,10 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
           {results.map((result) => (
             <p
               className="text-neutral-500 ml-1 'text-lg'"
-              onClick={() => onChange(result)}
+              onClick={() => {
+                onChange(result);
+                setResults([]);
+              }}
             >
               {result.label}
             </p>
