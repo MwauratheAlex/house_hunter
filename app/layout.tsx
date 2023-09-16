@@ -36,7 +36,7 @@ export default async function RootLayout({ children }: props) {
           <Search />
           <LoginModal />
           <RegisterModal />
-          <RentModal />
+          {/* <RentModal /> */}
           <ContactModal />
           <ToasterProvider />
         </header>

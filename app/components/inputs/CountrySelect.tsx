@@ -12,12 +12,6 @@ const leafletGeosearch = require("leaflet-geosearch");
 const { GeoSearchControl, OpenStreetMapProvider } = leafletGeosearch;
 
 export type CountrySelectValue = {
-  flag: string;
-  // label: string;
-  latlng: number[];
-  region: string;
-  value: string;
-
   x: number;
   y: number;
   label: string;

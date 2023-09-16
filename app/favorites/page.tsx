@@ -4,8 +4,8 @@ import ListingCard from "../components/listingCard/ListingCard";
 import ClientOnly from "../components/ClientOnly";
 
 export default async function page() {
-  const listings = await getFavoriteListings();
-  const currentUser = await getCurrentUser();
+  const listings = (await getFavoriteListings()) || null;
+  const currentUser = (await getCurrentUser()) || null;
 
   return (
     <ClientOnly>
