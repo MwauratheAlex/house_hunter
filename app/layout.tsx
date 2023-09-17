@@ -11,6 +11,7 @@ import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
 import ContactModal from "./components/modals/ContactModal";
+import ClientOnly from "./components/ClientOnly";
 
 export const metadata: Metadata = {
   title: "House Hunter",
@@ -36,7 +37,10 @@ export default async function RootLayout({ children }: props) {
           <Search />
           <LoginModal />
           <RegisterModal />
-          {/* <RentModal /> */}
+          <ClientOnly>
+            <RentModal />
+          </ClientOnly>
+
           <ContactModal />
           <ToasterProvider />
         </header>
