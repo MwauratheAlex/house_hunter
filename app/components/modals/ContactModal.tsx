@@ -34,7 +34,7 @@ export default function ContactModal() {
 
   const onSubmit: any = async (data: string) => {
     setIsLoading(true);
-    // console.log(data, user, listing);
+    console.log(data, user, listing);
     axios
       .post("/api/contact", { message: data, user: user, listing: listing })
       .then((res) => {
