@@ -9,6 +9,8 @@ import { SafeUser } from "@/app/types";
 import useRentModal from "@/app/hooks/useRentModal ";
 import { useRouter } from "next/navigation";
 import Link from "./Link";
+import { useEffect } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import styles from "@/app/styles/user_menu.module.css";
 
@@ -21,6 +23,15 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const url = `${pathname}`;
+    console.log(url);
+    // You can now use the current URL
+    // ...
+  }, [pathname, searchParams]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +49,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, [currentUser, loginModal, rentModal]);
 
   //Styles
-  const { menuContainer, menuLink } = styles;
+  const { menuContainer, menuLink, active } = styles;
 
   return (
     <div className="relative">
@@ -75,17 +86,20 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           {currentUser ? (
             <ul className="select-none">
               <Link
+                active={pathname == "/" ? active : ""}
                 onClick={() => router.push("/")}
                 text="Home"
                 variant={menuLink}
               />
               <Link
+                active={pathname == "/favorites" ? active : ""}
                 onClick={() => router.push("/favorites")}
                 variant={menuLink}
                 text="My Favourites"
               />
 
               <Link
+                active={pathname == "/properties" ? active : ""}
                 onClick={() => router.push("/properties")}
                 variant={menuLink}
                 text="My Properties"

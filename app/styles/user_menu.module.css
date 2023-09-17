@@ -19,10 +19,24 @@
   margin: 0;
   min-width: max-content;
   gap: 0;
-  /* border: 1px solid red; */
   font-weight: bold;
   color: rgb(25, 25, 25);
   text-overflow: clip;
   width: 100%;
   border-top: 1px solid rgb(222, 220, 220);
+}
+
+.menuContainer ul li.active {
+  color: rgb(255, 255, 255);
+  background: rgb(25, 25, 25);
+}
+
+.menuContainer ul li:hover {
+  /* color: rgb(255, 255, 255); */
+  background: rgb(245, 245, 245);
+}
+
+.menuContainer ul li.active:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
