@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import { Nunito } from "next/font/google";
 import Search from "./components/search/Search";
 import RegisterModal from "./components/modals/RegisterModal";
+import RegisterPhoneModal from "./components/modals/RegisterPhoneModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: props) {
           <Search />
           <LoginModal />
           <RegisterModal />
+          <RegisterPhoneModal />
           <ClientOnly>
             <RentModal />
           </ClientOnly>
