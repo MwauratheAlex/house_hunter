@@ -45,13 +45,13 @@ const Button: React.FC<ButtonProps> = ({
             ${small ? "font-light" : "font-semibold"}
             ${small ? "border-[1px]" : "border-2"}
             ${red && "border-[#ff2222]"}
-            ${whatsapp && "border-green-500"}
             ${call && "border-orange-400"}
             `}
     >
       {Icon && (
         <Icon
           size={24}
+          fill={whatsapp ? "green" : ""}
           className="
                             absolute
                             left-4

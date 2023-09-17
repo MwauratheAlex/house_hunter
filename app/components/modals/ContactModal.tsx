@@ -18,7 +18,7 @@ export default function ContactModal() {
   //   const registerModal = useRegisterModal();
   //   const loginModal = useLoginModal();
   const contactModal = useContactModal();
-
+  const { user, listing } = contactModal;
   const [isLoading, setIsLoading] = useState(false);
 
   // const {
@@ -34,12 +34,13 @@ export default function ContactModal() {
 
   const onSubmit: any = async (data: string) => {
     setIsLoading(true);
-    console.log(data);
+    // console.log(data, user, listing);
     axios
-      .post("/api/contact", { data })
-      .then(() => {
+      .post("/api/contact", { message: data, user: user, listing: listing })
+      .then((res) => {
         toast.success("Success!");
         contactModal.onClose();
+        console.log(res);
         // loginModal.onOpen();
       })
       .catch((error) => {
@@ -104,6 +105,7 @@ export default function ContactModal() {
     <div className="flex flex-col gap-4 mt-3">
       <hr />
       <Button
+        whatsapp
         outline
         label="Whatsapp the owner"
         icon={BsWhatsapp}

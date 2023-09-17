@@ -49,8 +49,7 @@ export default function ListingCard({
   );
 
   const handleContact = () => {
-    console.log("contact");
-    contactModal.onOpen();
+    contactModal.onOpen(currentUser, data);
   };
 
   return (
