@@ -2,6 +2,7 @@ import ListingCard from "./components/listingCard/ListingCard";
 import getListings, { IListingsParams } from "./actions/getListings";
 import getCurrentUser from "./actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
+import Search from "./components/search/Search";
 
 interface HomeProps {
   searchParams: IListingsParams;
@@ -13,6 +14,7 @@ export default async function Home() {
 
   return (
     <ClientOnly>
+      <Search />
       <main>
         {listings.map((listing) => (
           <ListingCard
