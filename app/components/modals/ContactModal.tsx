@@ -58,22 +58,7 @@ export default function ContactModal() {
         title="Contact the owner"
         subtitle="Leave them a message here. (Expect an email)"
       />
-      {/* <Input
-        id="phone"
-        label="Phone"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      /> */}
-      {/* <Input
-        id="message"
-        label="Message"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      /> */}
+
       <textarea
         id="message"
         rows={4}

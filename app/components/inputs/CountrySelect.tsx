@@ -2,6 +2,10 @@
 
 import { useEffect, useState, useRef } from "react";
 import DebounceInput from "react-debounce-input";
+import styles from "../../styles/search.module.css";
+// import searchIcon from "./images/serch-icon.svg";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
 import Select from "react-select";
 
@@ -20,9 +24,18 @@ export type CountrySelectValue = {
 interface CountrySelectProps {
   value?: string;
   onChange: (value: CountrySelectValue) => void;
+  shadow?: boolean;
+  id?: string;
+  Icon?: string | StaticImport;
 }
 
-const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
+const CountrySelect: React.FC<CountrySelectProps> = ({
+  id,
+  value,
+  onChange,
+  shadow,
+  Icon,
+}) => {
   // const { getAll } = useCountries();
   // setup
   const provider = new OpenStreetMapProvider();
@@ -57,12 +70,14 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
   return (
     <div className="w-full relative">
       <input
+        id={id}
         type="text"
         placeholder=" "
         value={searchSting} // Use typedValue as the input value
         onChange={(e) => setSearchString(e.target.value)} // Update typedValue on input change
         // className="text-lg p-3 border-2"
         className={`
+          relative
           peer
           w-full
           p-4
@@ -74,8 +89,25 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
           outline-none
           transition
           disabled:opacity-70
-          disabled:cursor-not-allowed`}
+          disabled:cursor-not-allowed
+          ${shadow && `border-none ${styles.searchShadow}`}
+          ${Icon ? "pl-14" : "pl-4"}
+          `}
       />
+
+      {Icon && (
+        <Image
+          src={Icon}
+          alt=""
+          width={29}
+          height={29}
+          className="
+                            absolute
+                            left-4
+                            top-3
+                        "
+        />
+      )}
 
       <label
         className={`
@@ -85,7 +117,6 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         transform
         -translate-y-3
         top-5
-        left-4
         z-10
         origin-[0]
         peer-placeholder-shown:scale-100
@@ -93,6 +124,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         peer-focus:scale-75
         peer-focus:-translate-y-4
         text-zinc-400
+        ${Icon ? "left-14" : "left-4"}
       `}
       >
         Anywhere

@@ -49,6 +49,7 @@ export default function ListingCard({
   );
 
   const handleContact = () => {
+    router.push(`/listings/${data.id}`);
     contactModal.onOpen(currentUser, data);
   };
 
