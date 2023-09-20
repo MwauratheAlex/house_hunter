@@ -35,7 +35,9 @@ export default async function RootLayout({ children }: props) {
       <body className={font.className}>
         <header>
           <Navbar currentUser={currentUser} />
-          <Search />
+          <ClientOnly>
+            <Search />
+          </ClientOnly>
           <LoginModal />
           <RegisterModal />
           <RegisterPhoneModal />
