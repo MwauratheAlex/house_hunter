@@ -34,6 +34,21 @@ export default function Search() {
     setHidden((prev) => !prev);
   }
 
+  // let currentQuery = {};
+
+  // const updatedQuery: any = {
+  //   ...currentQuery,
+  //   locationValue: location?.value,
+  //   guestCount,
+  //   roomCount,
+  //   bathroomCount
+  // };
+
+  // const url = qs.stringifyUrl({
+  //   url: '/',
+  //   query: updatedQuery,
+  // }, { skipNull: true });
+
   return (
     <section className={searchBar}>
       <form>
